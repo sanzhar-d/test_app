@@ -1,6 +1,9 @@
 package kg.megacom.test_app.services;
 
 import kg.megacom.test_app.models.Question;
+import kg.megacom.test_app.models.Subject;
+
+import java.util.List;
 
 public interface QuestionService {
 
@@ -11,4 +14,6 @@ public interface QuestionService {
     Question update(Question question);
 
     Question delete(Question question);
+
+    List<Question> findAllBySubject(Subject subject);
 }

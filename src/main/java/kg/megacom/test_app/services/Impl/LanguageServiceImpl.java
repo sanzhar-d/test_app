@@ -13,8 +13,9 @@ public class LanguageServiceImpl implements LanguageService {
     private LanguageDao languageDao;
 
     @Override
-    public Language save() {
-        return null;
+    public Language save(Language language) {
+        Language languageSaved = languageDao.save(language);
+        return languageSaved;
     }
 
     @Override
@@ -29,6 +30,11 @@ public class LanguageServiceImpl implements LanguageService {
 
     @Override
     public Language delete(Language language) {
+        return null;
+    }
+
+    @Override
+    public Language findAll() {
         return null;
     }
 }

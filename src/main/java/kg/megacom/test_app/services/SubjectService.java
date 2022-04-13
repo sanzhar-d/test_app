@@ -1,6 +1,9 @@
 package kg.megacom.test_app.services;
 
+import kg.megacom.test_app.models.Language;
 import kg.megacom.test_app.models.Subject;
+
+import java.util.List;
 
 public interface SubjectService {
 
@@ -11,4 +14,6 @@ public interface SubjectService {
     Subject update(Subject subject);
 
     Subject delete(Subject subject);
+
+    List<Subject> findAllByLang(Language language);
 }
