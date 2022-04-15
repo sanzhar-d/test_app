@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class QuestionServiceImpl implements QuestionService {
 
-
+    @Autowired
     private QuestionDao questionDao;
 
     @Override
@@ -32,6 +32,7 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public Question delete(Question question) {
+
         return null;
     }
 

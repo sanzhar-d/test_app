@@ -2,6 +2,8 @@ package kg.megacom.test_app.services;
 
 import kg.megacom.test_app.models.Language;
 
+import java.util.List;
+
 public interface LanguageService {
 
     Language save(Language language);
@@ -12,5 +14,5 @@ public interface LanguageService {
 
     Language delete(Language language);
 
-    Language findAll();
+    List<Language> findAllByActive();
 }
