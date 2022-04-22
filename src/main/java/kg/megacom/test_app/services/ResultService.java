@@ -1,14 +1,15 @@
 package kg.megacom.test_app.services;
 
+import kg.megacom.test_app.models.dto.ResultDto;
 import kg.megacom.test_app.models.entities.Result;
 
 public interface ResultService {
 
-    Result save();
+    ResultDto save(ResultDto resultDto);
 
-    Result findById(Long id);
+    ResultDto findById(Long id);
 
-    Result update(Result result);
+    ResultDto update(ResultDto result);
 
-    Result delete(Result result);
+    ResultDto delete(ResultDto result);
 }

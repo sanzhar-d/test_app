@@ -2,6 +2,7 @@ package kg.megacom.test_app.services.Impl;
 
 import kg.megacom.test_app.dao.AnswerDao;
 import kg.megacom.test_app.mappers.AnswerMapper;
+import kg.megacom.test_app.mappers.QuestionMapper;
 import kg.megacom.test_app.models.dto.AnswerDto;
 import kg.megacom.test_app.models.dto.QuestionDto;
 import kg.megacom.test_app.models.entities.Answer;
@@ -17,10 +18,11 @@ public class AnswerServiceImpl implements AnswerService {
     @Autowired
     private AnswerDao answerDao;
     private AnswerMapper answerMapper = AnswerMapper.INSTANCE;
+    private QuestionMapper questionMapper = QuestionMapper.INSTANCE;
 
     @Override
     public AnswerDto save(AnswerDto answerDto) {
-        answerDto.set_active(true);
+        answerDto.setActive(true);
         Answer answer = answerDao.save(answerMapper.toAnswer(answerDto));
         return answerMapper.toAnswerDto(answer);
     }
@@ -49,7 +51,9 @@ public class AnswerServiceImpl implements AnswerService {
 
     @Override
     public List<AnswerDto> findAllByQuestion(QuestionDto question) {
-        return null;
+        List<Answer> answers = answerDao.findAllByQuestionAndIsActive(questionMapper.toQuestion(question), true);
+        return answerMapper.toAnswerDtoList(answers);
+
     }
 
 }

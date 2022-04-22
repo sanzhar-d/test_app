@@ -16,7 +16,8 @@ public class Question {
     @ManyToOne
     @JoinColumn(name = "subject_id")
     private Subject subject;
-    private boolean is_active;
+    @Column
+    private boolean isActive;
     private String image;
     private int score;
 

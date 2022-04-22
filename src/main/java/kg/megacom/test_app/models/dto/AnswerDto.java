@@ -8,6 +8,6 @@ public class AnswerDto {
     private Long id;
     private String answer;
     private boolean is_true;
-    private boolean is_active;
+    private boolean isActive;
     private QuestionDto question;
 }

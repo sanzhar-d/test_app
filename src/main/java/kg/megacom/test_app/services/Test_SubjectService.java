@@ -1,14 +1,15 @@
 package kg.megacom.test_app.services;
 
+import kg.megacom.test_app.models.dto.TestSubjectDto;
 import kg.megacom.test_app.models.entities.TestSubject;
 
 public interface Test_SubjectService {
 
-    TestSubject save();
+    TestSubjectDto save(TestSubjectDto testSubjectDto);
 
-    TestSubject findById(Long id);
+    TestSubjectDto findById(Long id);
 
-    TestSubject update(TestSubject test_subject);
+    TestSubjectDto update(TestSubjectDto test_subject);
 
-    TestSubject delete(TestSubject test_subject);
+    TestSubjectDto delete(TestSubjectDto test_subject);
 }

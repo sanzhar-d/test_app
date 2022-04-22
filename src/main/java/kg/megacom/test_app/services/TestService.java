@@ -1,20 +1,21 @@
 package kg.megacom.test_app.services;
 
+import kg.megacom.test_app.models.dto.TestDto;
 import kg.megacom.test_app.models.entities.Test;
 
 import java.util.List;
 
 public interface TestService {
 
-    Test save();
+    TestDto save(TestDto testDto);
 
-    Test findById(Long id);
+    TestDto findById(Long id);
 
-    Test update(Test test);
+    TestDto update(TestDto test);
 
-    Test delete(Test test);
+    TestDto delete(TestDto test);
 
-    List<Test> findAllByActive();
+    List<TestDto> findAllByActive();
 
 
 

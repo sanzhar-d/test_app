@@ -1,6 +1,7 @@
 package kg.megacom.test_app.controllers;
 
 import kg.megacom.test_app.models.dto.LanguageDto;
+import kg.megacom.test_app.models.dto.QuestionDto;
 import kg.megacom.test_app.services.LanguageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class LanguageController {
     }
 
     @GetMapping("/get")
-    public LanguageDto findById(@RequestParam Long id){
+    public LanguageDto findById(@RequestParam Long id, @RequestParam(name = "userName", required = false, defaultValue = "test") String name){
         return languageService.findById(id);
     }
 

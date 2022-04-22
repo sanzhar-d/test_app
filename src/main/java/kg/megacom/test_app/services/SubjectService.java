@@ -1,5 +1,7 @@
 package kg.megacom.test_app.services;
 
+import kg.megacom.test_app.models.dto.LanguageDto;
+import kg.megacom.test_app.models.dto.SubjectDto;
 import kg.megacom.test_app.models.entities.Language;
 import kg.megacom.test_app.models.entities.Subject;
 
@@ -7,13 +9,13 @@ import java.util.List;
 
 public interface SubjectService {
 
-    Subject save();
+    SubjectDto save(SubjectDto subjectDto);
 
-    Subject findById(Long id);
+    SubjectDto findById(Long id);
 
-    Subject update(Subject subject);
+    SubjectDto update(SubjectDto subject);
 
-    Subject delete(Subject subject);
+    SubjectDto delete(SubjectDto subject);
 
-    List<Subject> findAllByLang(Language language);
+    List<SubjectDto> findAllByLang(LanguageDto language);
 }
