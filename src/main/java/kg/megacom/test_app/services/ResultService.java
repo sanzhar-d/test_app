@@ -1,6 +1,6 @@
 package kg.megacom.test_app.services;
 
-import kg.megacom.test_app.models.Result;
+import kg.megacom.test_app.models.entities.Result;
 
 public interface ResultService {
 

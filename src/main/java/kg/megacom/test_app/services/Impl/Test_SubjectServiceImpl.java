@@ -1,7 +1,7 @@
 package kg.megacom.test_app.services.Impl;
 
 import kg.megacom.test_app.dao.Test_SubjectDao;
-import kg.megacom.test_app.models.TestSubject;
+import kg.megacom.test_app.models.entities.TestSubject;
 import kg.megacom.test_app.services.Test_SubjectService;
 import org.springframework.stereotype.Service;
 

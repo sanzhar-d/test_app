@@ -1,6 +1,6 @@
 package kg.megacom.test_app.dao;
 
-import kg.megacom.test_app.models.Language;
+import kg.megacom.test_app.models.entities.Language;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

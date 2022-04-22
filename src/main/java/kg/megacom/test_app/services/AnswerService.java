@@ -1,19 +1,20 @@
 package kg.megacom.test_app.services;
 
-import kg.megacom.test_app.models.Answer;
-import kg.megacom.test_app.models.Question;
+import kg.megacom.test_app.models.dto.AnswerDto;
+import kg.megacom.test_app.models.dto.QuestionDto;
+import kg.megacom.test_app.models.entities.Answer;
 
 import java.util.List;
 
 public interface AnswerService {
 
-    Answer save(Answer answer);
+    AnswerDto save(AnswerDto answerDto);
 
-    Answer findById(Long id);
+    AnswerDto findById(Long id);
 
-    Answer update(Answer answer);
+    AnswerDto update(AnswerDto answer);
 
-    Answer delete(Answer answer);
+    AnswerDto delete(AnswerDto answer);
 
-    List<Answer> findAllByQuestion(Question question);
+    List<AnswerDto> findAllByQuestion(QuestionDto question);
 }

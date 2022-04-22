@@ -1,7 +1,9 @@
 package kg.megacom.test_app.services.Impl;
 
 import kg.megacom.test_app.dao.LanguageDao;
-import kg.megacom.test_app.models.Language;
+import kg.megacom.test_app.mappers.LanguageMapper;
+import kg.megacom.test_app.models.dto.LanguageDto;
+import kg.megacom.test_app.models.entities.Language;
 import kg.megacom.test_app.services.LanguageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,40 +15,43 @@ public class LanguageServiceImpl implements LanguageService {
 
     @Autowired
     private LanguageDao languageDao;
+    private LanguageMapper languageMapper = LanguageMapper.INSTANCE;
 
     @Override
-    public Language save(Language language) {
+    public LanguageDto save(LanguageDto languageDto) {
+        Language language = languageMapper.languageDtoToLanguage(languageDto);
         language.set_active(true);
         Language languageSaved = languageDao.save(language);
-        return languageSaved;
+        return languageMapper.languageToLanguageDto(languageSaved);
     }
 
     @Override
-    public Language findById(Long id) {
-        return languageDao.findById(id).orElse(null);
+    public LanguageDto findById(Long id) {
+        Language language = languageDao.findById(id).orElse(null);
+        return languageMapper.languageToLanguageDto(language);
     }
 
     @Override
-    public Language update(Language language) {
+    public LanguageDto update(LanguageDto language) {
         boolean isExist = languageDao.existsById(language.getId());
         if(!isExist){
             return null;
         }else{
-           Language updatedLanguage = languageDao.save(language);
-           return updatedLanguage;
+           Language updatedLanguage = languageDao.save(languageMapper.languageDtoToLanguage(language));
+           return languageMapper.languageToLanguageDto(updatedLanguage);
         }
     }
 
     @Override
-    public Language delete(Language language) {
+    public LanguageDto delete(LanguageDto language) {
         language.set_active(false);
-        Language deletedLanguage = update(language);
+        LanguageDto deletedLanguage = update(language);
         return deletedLanguage;
     }
 
     @Override
-    public List<Language> findAllByActive() {
+    public List<LanguageDto> findAllByActive() {
         List<Language> languages = languageDao.findAllByActive();
-        return languages;
+        return languageMapper.languageListToLanguageDtoList(languages);
     }
 }

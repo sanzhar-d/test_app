@@ -1,10 +1,9 @@
 package kg.megacom.test_app.services.Impl;
 
 import kg.megacom.test_app.dao.SubjectDao;
-import kg.megacom.test_app.models.Language;
-import kg.megacom.test_app.models.Subject;
+import kg.megacom.test_app.models.entities.Language;
+import kg.megacom.test_app.models.entities.Subject;
 import kg.megacom.test_app.services.SubjectService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
